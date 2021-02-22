@@ -1,0 +1,19 @@
+type Query{
+    getAllHeros: [Hero]
+}
+
+type Hero {
+    id: String!
+    name: String
+    friends: [Friend]
+    friend: Friend
+    address: Address
+}
+
+type Address @key(fields: "id") @extends {
+    id: String! @external
+}
+
+type Friend @key(fields: "id") @extends{
+    id: String! @external
+}
